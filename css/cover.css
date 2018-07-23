@@ -41,6 +41,12 @@ body {
   max-width: 42em;
 }
 
+/* Override the default property */
+.container {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 /*Important for file list table's word wrapping*/
 .textWrapTable, .textWrap{
   width: 0em;

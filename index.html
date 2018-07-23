@@ -47,6 +47,7 @@
           <button type="button" class="btn btn-success btn-sm" data-target="#secondaryFilePanelModal" data-toggle="modal">move</button>
           <button type="button" class="btn btn-success btn-sm">delete</button>
           <button type="button" class="btn btn-success btn-sm">history</button>
+          <button type="button" class="btn btn-success btn-sm">log</button>
         </div>
 
         <div class="row align-items-center mx-auto" style="margin-bottom: 4px; margin-top: 6px;">
@@ -103,6 +104,10 @@
     </div>
 
     <footer class="mastfoot mt-auto">
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Success!</strong> Indicates a successful or positive action.
+        </div>
       <div class="container">
         <div class="row">
 
@@ -188,7 +193,7 @@
 
         <div class="modal-body" style="height: 78vh;">
           <div class="btn-group">
-            <button type="button" class="btn btn-secondary">
+            <button type="button" class="btn btn-secondary active">
               <i class="fa fa-home"></i>
               <i class="d-none d-sm-block"> home</i>
             </button>
@@ -214,7 +219,7 @@
           </div>
 
 
-          <div class="container  w-100 mx-auto flex-column rounded-left" style="overflow-y: scroll; background-color:rgb(78, 76, 76); height: 95%;">
+          <div class="container w-100 mx-auto flex-column rounded-left" style="overflow-y: scroll; background-color:rgb(78, 76, 76); height: 95%;">
             <div class="container table-responsive-sm">
               <table class="table table-sm table-borderless table-striped table-hover">
                 <thead>
