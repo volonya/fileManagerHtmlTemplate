@@ -6,3 +6,8 @@
 span.btn:hover {
   background-color: rgb(228, 87, 6);
 }
+
+.selectedFile {
+  color: rgb(250, 125, 125);
+  border: 1px solid rgb(255, 40, 40);
+}
