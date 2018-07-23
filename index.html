@@ -1,0 +1,371 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>FileManager</title>
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/cover.css" rel="stylesheet">
+  <link href="css/icon.css" rel="stylesheet">
+  <link href="css/scollbar.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/hoverOnFile.css" rel="stylesheet">
+  <link href="css/dropdownMenuStyle.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+  <style>
+  </style>
+</head>
+
+<body class="text-center" style="overflow-y:hidden;">
+  <div class="container d-flex w-100 h-100  mx-auto flex-column container-fluid ">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">hello</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="row align-items-center mx-auto" style="margin-bottom: 4px; margin-top: 6px;">
+          <button type="button" class="btn btn-success btn-sm" data-target="#secondaryFilePanelModal" data-toggle="modal">copy</button>
+          <button type="button" class="btn btn-success btn-sm" data-target="#secondaryFilePanelModal" data-toggle="modal">move</button>
+          <button type="button" class="btn btn-success btn-sm">delete</button>
+          <button type="button" class="btn btn-success btn-sm">history</button>
+        </div>
+
+        <div class="row align-items-center mx-auto" style="margin-bottom: 4px; margin-top: 6px;">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <button class="btn btn-sm btn-outline-success" type="button">Find in sub</button>
+            </div>
+            <input type="text" class="form-control form-control-sm" placeholder="or in current folder">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container  w-100 h-100  mx-auto flex-column rounded-left " style="overflow-y: scroll; background-color:rgb(78, 76, 76);">
+      <div class="container table-responsive-sm">
+        <table class="table table-sm table-borderless table-striped table-hover">
+          <thead>
+            <tr class="d-flex text-primary">
+              <th class="col-1">#</th>
+              <th class="col-10">name</th>
+              <th class="col-1">?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="d-flex text-left">
+              <td class="col-1 text-center">
+                <i class="fa fa-folder-o"></i>
+              </td>
+              <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+              <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                <i class="fa fa-sort-down"></i>
+              </td>
+            </tr>
+
+            <tr class="d-flex text-left">
+              <td class="col-1 text-center">
+
+                <i class="fa fa-file-text-o"></i>
+
+              </td>
+              <td class="col">namssse</td>
+              <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                <i class="fa fa-sort-down"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer class="mastfoot mt-auto">
+      <div class="container">
+        <div class="row">
+
+          <div class="col">
+            <span class="d-none d-sm-block">path:</span>
+            <span class="badge badge-pill badge-success d-block">root</span>
+            <span class="badge badge-pill badge-success">1/</span>
+            <span class="badge badge-pill badge-success">Object/</span>
+          </div>
+
+          <div class="col">
+            <span class="d-none d-sm-block">sort by:</span>
+            <span class="badge badge-pill badge-success">name</span>
+            <span class="badge badge-pill badge-success">size</span>
+            <span class="badge badge-pill badge-success">date</span>
+          </div>
+
+          <div class="col">
+            <span class="d-none d-sm-block">info:</span>
+            <span class="badge badge-pill badge-primary d-block">home of Csaba Kola</span>
+            <span class="badge badge-pill badge-warning">selected:2</span>
+            <!-- <span class="badge badge-pill badge-success">size:100kB</span> -->
+          </div>
+
+          <div class="col d-none d-sm-block">
+            <div class="upload-drop-zone m-0 p-0" id="drop-zone">
+              <p>Drop files here to upload</p>
+              <p>1 / 10</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- The File properties modal -->
+  <div id="filePropertiesModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content text-dark">
+
+        <div class="modal-header">
+          <h6 class="modal-title">File properties</h6>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <p>Mindenamitbármirőlistudniakatrtáldeféltélmegkérdezni.doc</p>
+          <table class="table table-sm table-dark text-truncate">
+            <tr>
+              <td>type:</td>
+              <td>file</td>
+            </tr>
+            <tr>
+              <td>created:</td>
+              <td>2018.07.18</td>
+            </tr>
+            <tr>
+              <td>size:</td>
+              <td>1018kB</td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- The secondary File panel modal -->
+  <div id="secondaryFilePanelModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h6 class="modal-title text-dark">Point to the target place</h6>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body" style="height: 78vh;">
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary">
+              <i class="fa fa-home"></i>
+              <i class="d-none d-sm-block"> home</i>
+            </button>
+            <button type="button" class="btn btn-secondary">
+              <i class="fa fa-group"></i>
+              <i class="d-none d-sm-block">workgroup</i>
+            </button>
+            <button type="button" class="btn btn-secondary">
+              <i class="fa fa-area-chart"></i>
+              <i class="d-none d-sm-block">project</i>
+            </button>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="fa fa-hand-o-right"></i>
+                choose
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">Dropdown link</a>
+                <a class="dropdown-item" href="#">Dropdown link</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="container  w-100 mx-auto flex-column rounded-left" style="overflow-y: scroll; background-color:rgb(78, 76, 76); height: 95%;">
+            <div class="container table-responsive-sm">
+              <table class="table table-sm table-borderless table-striped table-hover">
+                <thead>
+                  <tr class="d-flex text-primary">
+                    <th class="col-1">#</th>
+                    <th class="col-10">name</th>
+                    <th class="col-1">?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="d-flex text-left">
+                    <td class="col-1 text-center">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-folder-open" />
+                      </svg-icon>
+                    </td>
+                    <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+                    <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-arrow-thick-thin-down" />
+                      </svg-icon>
+                    </td>
+                  </tr>
+
+                  <tr class="d-flex text-left">
+                    <td class="col-1 text-center">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-folder-open" />
+                      </svg-icon>
+                    </td>
+                    <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+                    <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-arrow-thick-thin-down" />
+                      </svg-icon>
+                    </td>
+                  </tr>
+
+                  <tr class="d-flex text-left">
+                    <td class="col-1 text-center">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-folder-open" />
+                      </svg-icon>
+                    </td>
+                    <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+                    <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-arrow-thick-thin-down" />
+                      </svg-icon>
+                    </td>
+                  </tr>
+
+
+                  <tr class="d-flex text-left">
+                    <td class="col-1 text-center">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-folder-open" />
+                      </svg-icon>
+                    </td>
+                    <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+                    <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-arrow-thick-thin-down" />
+                      </svg-icon>
+                    </td>
+                  </tr>
+
+                  <tr class="d-flex text-left">
+                    <td class="col-1 text-center">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-folder-open" />
+                      </svg-icon>
+                    </td>
+                    <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+                    <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-arrow-thick-thin-down" />
+                      </svg-icon>
+                    </td>
+                  </tr>
+
+                  <tr class="d-flex text-left">
+                    <td class="col-1 text-center">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-folder-open" />
+                      </svg-icon>
+                    </td>
+                    <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+                    <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-arrow-thick-thin-down" />
+                      </svg-icon>
+                    </td>
+                  </tr>
+
+                  <tr class="d-flex text-left">
+                    <td class="col-1 text-center">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-folder-open" />
+                      </svg-icon>
+                    </td>
+                    <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+                    <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-arrow-thick-thin-down" />
+                      </svg-icon>
+                    </td>
+                  </tr>
+
+                  <tr class="d-flex text-left">
+                    <td class="col-1 text-center">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-folder-open" />
+                      </svg-icon>
+                    </td>
+                    <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+                    <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-arrow-thick-thin-down" />
+                      </svg-icon>
+                    </td>
+                  </tr>
+
+                  <tr class="d-flex text-left">
+                    <td class="col-1 text-center">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-book-3" />
+                      </svg-icon>
+                    </td>
+                    <td class="col">namssse</td>
+                    <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
+                      <svg-icon class="iconSet">
+                        <src href="icons/sprite.svg#si-glyph-arrow-thick-thin-down" />
+                      </svg-icon>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Move</button>
+          <button type="button" class="btn btn-secondary-outlined">Copy</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/iconwc.js"></script>
+</body>
+
+</html>
