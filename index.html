@@ -104,10 +104,10 @@
     </div>
 
     <footer class="mastfoot mt-auto">
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Success!</strong> Indicates a successful or positive action.
-        </div>
+      <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Success!</strong> Indicates a successful or positive action.
+      </div>
       <div class="container">
         <div class="row">
 
@@ -139,10 +139,14 @@
           </div>
 
           <div class="col d-none d-md-block">
-            <div class="upload-drop-zone m-0 p-0 text-truncate" id="drop-zone">
-              <p>Drop files here to upload</p>
-              <p>1 / 10</p>
-            </div>
+            <form action="upload.php" method="POST">
+              <div class="upload-drop-zone m-0 p-0 text-truncate" id="drop-zone">
+                <input type="file" multiple>
+                <p>Drag your files here or click.</p>
+                <!-- <p>Drag your files here or click.</p> -->
+                <button class="btn" type="submit">Upload</button>
+              </div>
+              </form>
           </div>
         </div>
       </div>

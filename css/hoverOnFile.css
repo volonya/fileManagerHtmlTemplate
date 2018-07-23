@@ -11,3 +11,15 @@ span.btn:hover {
   color: rgb(250, 125, 125);
   border: 1px solid rgb(255, 40, 40);
 }
+
+form input{
+  position: absolute;
+  top: 0;
+  left: 20px;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  height: 45px;
+  outline: none;
+  opacity: 0;
+}
