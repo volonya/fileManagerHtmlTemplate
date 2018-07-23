@@ -17,6 +17,7 @@
   <link href="css/dropzone.css" rel="stylesheet">
   <link href="css/hoverOnFile.css" rel="stylesheet">
   <link href="css/dropdownMenuStyle.css" rel="stylesheet">
+  <link href="css/truncate.css" rel="stylesheet">
 
   <!-- Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -65,7 +66,12 @@
           <thead>
             <tr class="d-flex text-primary">
               <th class="col-1">#</th>
-              <th class="col-10">name</th>
+              <th class="col-10">
+                <div class="table-truncate-Own">
+                  This is a long path what have to handle and show only the end of it. It is critical on the small devices but helpful in the
+                  bigger one too.
+                </div>
+              </th>
               <th class="col-1">?</th>
             </tr>
           </thead>
@@ -206,9 +212,14 @@
             <div class="container table-responsive-sm">
               <table class="table table-sm table-borderless table-striped table-hover">
                 <thead>
-                  <tr class="d-flex text-primary">
+                  <tr class="d-flex text-warning">
                     <th class="col-1">#</th>
-                    <th class="col-10">name</th>
+                    <th class="col-10">
+                      <div class="table-truncate-Own">
+                        This is a long path what have to handle and show only the end of it. It is critical on the small devices but helpful in the
+                        bigger one too.
+                      </div>
+                    </th>
                     <th class="col-1">?</th>
                   </tr>
                 </thead>
