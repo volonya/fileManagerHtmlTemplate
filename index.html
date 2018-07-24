@@ -45,7 +45,7 @@
       <div class="row">
 
         <div class="row align-items-center mx-auto" style="margin-bottom: 4px; margin-top: 6px;">
-          <button type="button" class="btn btn-success btn-sm" data-target="#" data-toggle="modal">
+          <button type="button" class="btn btn-success btn-sm" data-target="#createModal" data-toggle="modal">
             <i class="fas fa-plus"></i> create</button>
           <button type="button" class="btn btn-success btn-sm" data-target="#secondaryFilePanelModal" data-toggle="modal">
             <i class="far fa-copy"></i> copy</button>
@@ -188,6 +188,60 @@
           </table>
         </div>
 
+      </div>
+    </div>
+  </div>
+
+  <!-- The Create modal -->
+  <div id="createModal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content text-dark">
+
+        <div class="modal-header">
+          <h6 class="modal-title">Let's create a new...</h6>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="name">
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2">folder</span>
+            </div>
+            <div class="btn-group" role="group">
+              <button id="fileCreateDropdown" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                <i class="fas fa-bolt"></i>
+                <span> else</span>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="fileCreateDropdown">
+                <a class="dropdown-item" href="">
+                  <i class="far fa-folder-open"></i>
+                  <span>folder</span>
+                </a>
+                <a class="dropdown-item" href="">
+                  <i class="fas fa-file-signature"></i>
+                  <span>image</span>
+                </a>
+                <a class="dropdown-item" href="">
+                  <i class="fas fa-file-alt"></i>
+                  <span>html text</span>
+                </a>
+                <a class="dropdown-item" href="">
+                  <i class="far fa-smile"></i>
+                  <span>own type</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <span class="text-success">Note: Filenames what shorter than 20 characters can be easily managing.</span>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <span class="text-danger"> existing file name or something went wrong</span>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Create</button>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
