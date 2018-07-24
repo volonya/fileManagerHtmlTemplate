@@ -20,7 +20,9 @@
   <link href="css/truncate.css" rel="stylesheet">
 
   <!-- Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+    crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
   <style>
   </style>
@@ -43,11 +45,16 @@
       <div class="row">
 
         <div class="row align-items-center mx-auto" style="margin-bottom: 4px; margin-top: 6px;">
-          <button type="button" class="btn btn-success btn-sm" data-target="#secondaryFilePanelModal" data-toggle="modal">copy</button>
-          <button type="button" class="btn btn-success btn-sm" data-target="#secondaryFilePanelModal" data-toggle="modal">move</button>
-          <button type="button" class="btn btn-success btn-sm">delete</button>
-          <button type="button" class="btn btn-success btn-sm">history</button>
-          <button type="button" class="btn btn-success btn-sm">log</button>
+          <button type="button" class="btn btn-success btn-sm" data-target="#" data-toggle="modal">
+            <i class="fas fa-plus"></i> create</button>
+          <button type="button" class="btn btn-success btn-sm" data-target="#secondaryFilePanelModal" data-toggle="modal">
+            <i class="far fa-copy"></i> copy</button>
+          <button type="button" class="btn btn-success btn-sm" data-target="#">
+            <i class="far fa-trash-alt"></i> delete</button>
+          <button type="button" class="btn btn-success btn-sm" data-target="#">
+            <i class="fas fa-history"></i> history</button>
+          <button type="button" class="btn btn-success btn-sm" data-target="#">
+            <i class="far fa-comment-alt"></i> log</button>
         </div>
 
         <div class="row align-items-center mx-auto" style="margin-bottom: 4px; margin-top: 6px;">
@@ -79,7 +86,7 @@
           <tbody>
             <tr class="d-flex text-left">
               <td class="col-1 text-center">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder-open"></i>
               </td>
               <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
               <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
@@ -90,7 +97,7 @@
             <tr class="d-flex text-left selectedFile">
               <td class="col-1 text-center">
 
-                <i class="fa fa-file-text-o"></i>
+                <i class="far fa-file"></i>
 
               </td>
               <td class="col">namssse</td>
@@ -114,10 +121,10 @@
           <div class="col">
             <span class="d-none d-sm-block">path:</span>
             <span class="btn badge badge-pill badge-success w-100 text-truncate">
-              <i class="fa fa-terminal"> root</i>
+              <i class="fas fa-terminal"> root</i>
             </span>
             <span class="btn badge badge-pill badge-success w-100 text-truncate">
-              <i class="fa fa-toggle-up"> Up</i>
+              <i class="fas fa-arrow-up"> Up</i>
             </span>
           </div>
 
@@ -131,10 +138,10 @@
           <div class="col">
             <span class="d-none d-sm-block">info:</span>
             <span class="btn badge badge-pill w-100 badge-primary">
-              <i class="fa fa-home text-truncate" style="max-width: 8rem"> Username or short name or the type of folder. Or long or anything else </i>
+              <i class="fas fa-home text-truncate" style="max-width: 8rem"> Username or short name or the type of folder. Or long or anything else </i>
             </span>
             <span class="btn badge badge-pill badge-warning w-100 text-truncate">
-              <i class="fa fa-save"> 2 / 100kB</i>
+              <i class="far fa-save"> 2 / 100kB</i>
             </span>
           </div>
 
@@ -146,7 +153,7 @@
                 <!-- <p>Drag your files here or click.</p> -->
                 <button class="btn" type="submit">Upload</button>
               </div>
-              </form>
+            </form>
           </div>
         </div>
       </div>
@@ -202,17 +209,17 @@
               <i class="d-none d-sm-block"> home</i>
             </button>
             <button type="button" class="btn btn-secondary">
-              <i class="fa fa-group"></i>
+              <i class="fas fa-cogs"></i>
               <i class="d-none d-sm-block">workgroup</i>
             </button>
             <button type="button" class="btn btn-secondary">
-              <i class="fa fa-area-chart"></i>
+              <i class="fas fa-shield-alt"></i>
               <i class="d-none d-sm-block">project</i>
             </button>
             <div class="btn-group" role="group">
               <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
-                <i class="fa fa-hand-o-right"></i>
+                <i class="fas fa-bolt"></i>
                 choose
               </button>
               <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -241,7 +248,7 @@
                 <tbody>
                   <tr class="d-flex text-left selectedFile">
                     <td class="col-1 text-center">
-                      <i class="fa fa-folder-o"></i>
+                      <i class="far fa-folder-open"></i>
                     </td>
                     <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
                     <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
@@ -251,7 +258,7 @@
 
                   <tr class="d-flex text-left selectedFile">
                     <td class="col-1 text-center">
-                      <i class="fa fa-folder-o"></i>
+                      <i class="far fa-folder-open"></i>
                     </td>
                     <td class="col-10 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
                     <td class="col-1 text-center" data-toggle="modal" data-target="#filePropertiesModal">
