@@ -80,7 +80,9 @@
                   bigger one too.
                 </div>
               </th>
-              <th class="col-1"><i class="fas fa-cloud-download-alt"></i></th>
+              <th class="col-1">
+                <i class="fas fa-cloud-download-alt"></i>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -171,7 +173,16 @@
         </div>
 
         <div class="modal-body">
-          <p>Mindenamitbármirőlistudniakatrtáldeféltélmegkérdezni.doc</p>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="name">
+            <button id="fileCreateDropdown" type="button" class="btn btn-danger btn-outline">
+              <i class="fas fa-signature"></i>
+              <span> rename</span>
+            </button>
+            <div class="input-group-append">
+            </div>
+          </div>
+
           <table class="table table-sm table-dark text-truncate">
             <tr>
               <td>type:</td>
@@ -187,6 +198,9 @@
             </tr>
           </table>
         </div>
+
+        <span class="text-success">Only files are renamable.</span>
+        <span class="text-danger">something went wrong!</span>
 
       </div>
     </div>
