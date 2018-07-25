@@ -53,7 +53,7 @@
             <i class="far fa-trash-alt"></i> delete</button>
           <button type="button" class="btn btn-success btn-sm" data-target="#historyModal" data-toggle="modal">
             <i class="fas fa-history"></i> history</button>
-          <button type="button" class="btn btn-success btn-sm" data-target="#">
+          <button type="button" class="btn btn-success btn-sm" data-target="#logModal" data-toggle="modal">
             <i class="far fa-comment-alt"></i> log</button>
         </div>
 
@@ -311,8 +311,8 @@
               <table class="table table-sm table-borderless table-striped table-hover">
                 <thead>
                   <tr class="d-flex text-warning">
-                    <th class="col-2">#</th>
-                    <th class="col-10">
+                    <th class="col-3">#</th>
+                    <th class="col-9">
                       <div class="table-truncate-Own">
                         description of saved snapshots
                       </div>
@@ -327,7 +327,7 @@
                         <button id="historyDropdown" type="button" class="btn btn-sm btn-outline-success" data-toggle="dropdown" aria-expanded="true">
                           <i class="fas fa-bolt"></i>
                           <span class="">1.1</span>
-                          
+
                         </button>
                         <div class="dropdown-menu">
                           <a class="dropdown-item" href="">
@@ -357,6 +357,61 @@
           <button id="fileCreateDropdown" type="button" class="btn btn-warning">
             <i class="fas fa-subscript"></i>
             <span>or sub version</span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The log modal -->
+  <div id="logModal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content text-dark">
+
+        <div class="modal-header">
+          <h6 class="modal-title">Logs and messages</h6>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body" style="height: 78vh;">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="type and find">
+          </div>
+
+          <div class="container w-100 mx-auto flex-column rounded-left" style="overflow-y: scroll; background-color:rgb(78, 76, 76); height: 95%;">
+            <div class="container table-responsive-sm">
+              <table class="table table-sm table-borderless table-striped table-hover">
+                <thead>
+                  <tr class="d-flex text-warning">
+                    <th class="col-4">When</th>
+                    <th class="col-8">
+                      <div class="table-truncate-Own">
+                        Messages
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="text-light">
+
+                  <tr class="d-flex text-left">
+                    <td class="col-4 text-center">
+                      <small class="text-warning">2018.07.25/10:06</small>
+                    </td>
+                    <td class="col-8 textWrapTable">MindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezniMindenamitbármirőlistudniakatrtáldeféltélmegkérdezni</td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+
+          <button id="fileCreateDropdown" type="button" class="btn btn-warning" data-dismiss="modal">
+            <span>close</span>
           </button>
 
         </div>
