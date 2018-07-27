@@ -145,7 +145,7 @@
               <span>center</span>
             </a>
             <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Snap points</h6>
+            <h6 class="dropdown-header">Usable Snap points</h6>
           </div>
         </li>
 
@@ -156,19 +156,16 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="lineWeightDD">
             <a class="dropdown-item">
-              <span style="font-family: Times New Roman;">Times new roman</span>
+              <span style="font-family: Times New Roman;">Times</span>
             </a>
             <a class="dropdown-item">
-              <span style="font-family: serif;">Sherif</span>
+              <span style="font-family: Courier New;">Courier</span>
             </a>
             <a class="dropdown-item">
-              <span style="font-family: Courier New;">Courier New</span>
-            </a>
-            <a class="dropdown-item">
-              <span style="font-family: Lucida Console;">Lucida Console</span>
+              <span style="font-family: Lucida Console;">Lucida</span>
             </a>
             <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Font</h6>
+            <h6 class="dropdown-header">Available fonts</h6>
           </div>
         </li>
 
@@ -291,6 +288,43 @@
           <span>snap on</span>
           <span>pin</span>
         </button>
+      </div>
+
+      <div class="input-group-prepend mr-1">
+        <button type="button" class="btn btn-sm btn-secondary mr-1">
+          <i class="fas fa-font"></i>
+          <span>Times</span>
+        </button>
+
+        <div class="btn-group btn-group-toggle mr-1" data-toggle="buttons">
+          <label class="btn btn-sm btn-primary active">
+            <input type="radio" name="options" autocomplete="off" checked>
+            <i class="fas fa-align-left"></i>
+          </label>
+          <label class="btn btn-sm btn-primary">
+            <input type="radio" name="options">
+            <i class="fas fa-align-center"></i>
+          </label>
+          <label class="btn btn-sm btn-primary">
+            <input type="radio" name="options">
+            <i class="fas fa-align-right"></i>
+          </label>
+          <label class="btn btn-sm btn-primary">
+            <input type="radio" name="options">
+            <i class="fas fa-align-justify"></i>
+          </label>
+        </div>
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-sm btn-primary active">
+            <input type="radio" name="options" autocomplete="off" checked>
+            <i class="fas fa-bold"></i>
+          </label>
+          <label class="btn btn-sm btn-primary">
+            <input type="radio" name="options">
+            <i class="fas fa-italic"></i>
+          </label>
+        </div>
       </div>
 
       <input type="text" placeholder="Type a command" class="form-control mr-1">
