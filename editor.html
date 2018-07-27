@@ -12,18 +12,17 @@
   <title>DrawManagers</title>
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/scollbar.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <!-- <link href="css/cover.css" rel="stylesheet"> -->
-  <link href="css/icon.css" rel="stylesheet">
-  <link href="css/scollbar.css" rel="stylesheet">
-  <link href="css/dropzone.css" rel="stylesheet">
-  <link href="css/hoverOnFile.css" rel="stylesheet">
-  <link href="css/dropdownMenuStyle.css" rel="stylesheet">
-  <link href="css/truncate.css" rel="stylesheet">
+  <!-- <link href="css/icon.css" rel="stylesheet"> -->
+  <!-- <link href="css/dropzone.css" rel="stylesheet"> -->
+  <!-- <link href="css/hoverOnFile.css" rel="stylesheet"> -->
+  <!-- <link href="css/dropdownMenuStyle.css" rel="stylesheet"> -->
+  <!-- <link href="css/truncate.css" rel="stylesheet"> -->
 
   <!-- Fonts -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
   <style>
     html,
@@ -31,8 +30,13 @@
       height: 100%;
     }
 
-    div {
-      display: block;
+    .dropdown-menu {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .dropdown-menu-icon:hover {
+      color: red;
     }
   </style>
 </head>
@@ -40,143 +44,266 @@
 <body>
 
   <!-- Nav top -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark height" style="height: 70;">
-    <a class="navbar-brand" href="#">Expand at md</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark py-0">
+    <a class="navbar-brand" href="#">hello</a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExample04">
+    <div class="collapse navbar-collapse" id="navbarHeader">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+          <a class="nav-link dropdown-toggle" href="" id="lineWeightDD" data-toggle="dropdown">
+            <i class="fas fa-bars"></i>
+            <span>line weight</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="lineWeightDD">
+            <a class="dropdown-item" href="">0.1</a>
+            <a class="dropdown-item" href="">0.2</a>
+            <a class="dropdown-item" href="">0.3</a>
+            <a class="dropdown-item" href="">0.5</a>
+            <a class="dropdown-item" href="">0.8</a>
+            <div class="input-group p-1">
+              <input type="text" class="form-control form-control-sm" placeholder="own value">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">px</span>
+              </div>
+            </div>
           </div>
         </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="lineWeightDD" data-toggle="dropdown">
+            <i class="far fa-map"></i>
+            <i>stroke</i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="lineWeightDD">
+            <a class="dropdown-item" href="">red</a>
+            <a class="dropdown-item" href="">green</a>
+            <a class="dropdown-item" href="">blue</a>
+            <a class="dropdown-item" href="">orange</a>
+            <a class="dropdown-item" href="">black</a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Stroke color</h6>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="lineWeightDD" data-toggle="dropdown">
+            <i class="fas fa-fill"></i>
+            <i>fill</i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="lineWeightDD">
+            <a class="dropdown-item" href="">red</a>
+            <a class="dropdown-item" href="">green</a>
+            <a class="dropdown-item" href="">blue</a>
+            <a class="dropdown-item" href="">orange</a>
+            <a class="dropdown-item" href="">black</a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Fill color</h6>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="lineWeightDD" data-toggle="dropdown">
+            <i class="fas fa-layer-group"></i>
+            <i>layers</i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="lineWeightDD">
+            <a class="dropdown-item" href="">
+              <i class="fas fa-plus-circle"></i>
+              <span>add new layer</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item">
+              <i class="far fa-times-circle dropdown-menu-icon"></i>
+              <span>long name layer what is an insane thing</span>
+              <i class="fas fa-plane-arrival dropdown-menu-icon"></i>
+            </a>
+            <a class="dropdown-item" href="">green</a>
+            <a class="dropdown-item" href="">blue</a>
+            <a class="dropdown-item" href="">orange</a>
+            <a class="dropdown-item" href="">black</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="lineWeightDD" data-toggle="dropdown">
+            <i class="fas fa-shapes"></i>
+            <i>snaps</i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="lineWeightDD">
+            <a class="dropdown-item">
+              <i class="far fa-times-circle dropdown-menu-icon"></i>
+              <span>segment</span>
+            </a>
+            <a class="dropdown-item">
+              <i class="far fa-times-circle dropdown-menu-icon"></i>
+              <span>center</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Snap points</h6>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="lineWeightDD" data-toggle="dropdown">
+            <i class="fas fa-font"></i>
+            <i>font</i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="lineWeightDD">
+            <a class="dropdown-item">
+              <span style="font-family: Times New Roman;">Times new roman</span>
+            </a>
+            <a class="dropdown-item">
+              <span style="font-family: serif;">Sherif</span>
+            </a>
+            <a class="dropdown-item">
+              <span style="font-family: Courier New;">Courier New</span>
+            </a>
+            <a class="dropdown-item">
+              <span style="font-family: Lucida Console;">Lucida Console</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Font</h6>
+          </div>
+        </li>
+
       </ul>
-      <form class="form-inline my-2 my-md-0">
-        <input class="form-control" type="text" placeholder="Search">
-      </form>
     </div>
   </nav>
 
-  <div class="container-fluid" style="height: calc(100% - 112px);">
+  <div class="container-fluid" style="height: calc(100% - 87px);">
     <div class="row justify-content-center h-100" style="background-color: greenyellow; ">
-      <div class="col-1 hidden-md-down" id="yellow" style="background-color: #343a40!important">
-        Left
+      <div class="col-1  d-md-none d-lg-block" id="yellow" style="background-color: #343a40!important; overflow-y: scroll;">
+
+        <div class="list-group mb-1">
+          <h6 class="text-warning">draw</h6>
+          <a href="#" class="list-group-item list-group-item-action p-1">line</a>
+          <a href="#" class="list-group-item list-group-item-action active p-1">
+            <i class="far fa-circle"></i>
+            <span>circle</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action p-1">
+            <i class="fas fa-draw-polygon"></i>
+            <span>poligon</span>
+          </a>
+        </div>
+        <div class="list-group mb-1">
+          <h6 class="text-warning">edit</h6>
+          <a href="#" class="list-group-item list-group-item-action p-1">
+            <i class="fas fa-mouse-pointer"></i>
+            <span>select</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action p-1">
+            <i class="far fa-copy"></i>
+            <span>copy</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action p-1">
+            <i class="fal fa-cut"></i>
+            <span>cut</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action p-1">
+            <span>move</span>
+          </a>
+        </div>
+
+
+        <div class="list-group mb-1">
+          <h6 class="text-warning">edit</h6>
+          <a href="#" class="list-group-item list-group-item-action p-1">select</a>
+          <a href="#" class="list-group-item list-group-item-action p-1">copy</a>
+          <a href="#" class="list-group-item list-group-item-action p-1">move</a>
+        </div>
+        <div class="list-group mb-1">
+          <h6 class="text-warning">edit</h6>
+          <a href="#" class="list-group-item list-group-item-action p-1">select</a>
+          <a href="#" class="list-group-item list-group-item-action p-1">copy</a>
+          <a href="#" class="list-group-item list-group-item-action p-1">move</a>
+        </div>
+        <div class="list-group mb-1">
+          <h6 class="text-warning">edit</h6>
+          <a href="#" class="list-group-item list-group-item-action p-1">select</a>
+          <a href="#" class="list-group-item list-group-item-action p-1">copy</a>
+          <a href="#" class="list-group-item list-group-item-action p-1">move</a>
+        </div>
+        <div class="list-group mb-1">
+          <h6 class="text-warning">edit</h6>
+          <a href="#" class="list-group-item list-group-item-action p-1">select</a>
+          <a href="#" class="list-group-item list-group-item-action p-1">copy</a>
+          <a href="#" class="list-group-item list-group-item-action p-1">move</a>
+        </div>
+
       </div>
 
-      <div class="col hidden-md-down borderr d-md-none d-lg-block" id="yellow" style="background-color: gray;">
+      <div class="col border" id="yellow" style="background-color: gray;">
         <canvas class="w-100 h-100"></canvas>
       </div>
     </div>
   </div>
 
   <!-- Nav footer -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark height" style="height: 70;">
-    <a class="navbar-brand" href="#">style</a>
-    <button class="navbar-toggler col-1" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="input-group input-group-sm">
+      <div class="input-group-prepend">
+        <button type="button" class="btn btn-sm btn-outline-warning mr-1 ">
+          <i class="fas fa-sun"></i>
+          <span>styles</span>
+        </button>
+      </div>
+      <div class="input-group-prepend">
+        <button type="button" class="btn btn-sm btn-secondary mr-1">
+          <i class="fas fa-bars"></i>
+          <span>0.1px</span>
+        </button>
+      </div>
+      <div class="input-group-prepend">
+        <button type="button" class="btn btn-sm btn-secondary mr-1">
+          <i class="far fa-map"></i>
+          <span>stroke</span>
+        </button>
+      </div>
+      <div class="input-group-prepend">
+        <button type="button" class="btn btn-sm btn-secondary mr-1">
+          <i class="fas fa-fill"></i>
+          <span>fill</span>
+        </button>
+      </div>
+      <div class="input-group-prepend">
+        <button type="button" class="btn btn-sm btn-secondary mr-1">
+          <i class="fas fa-layer-group"></i>
+          <span>Name of the layer</span>
+        </button>
+      </div>
+      <div class="input-group-prepend">
+        <button type="button" class="btn btn-sm btn-secondary mr-1">
+          <i class="fas fa-map-pin"></i>
+          <span>x:210; y:310</span>
+        </button>
+      </div>
 
-    <div class="collapse navbar-collapse" id="navbarsExample04">
-      <ul class="navbar-nav mr-auto">
-        <li>
-          <!-- line weight -->
-          <div class="btn-group dropup pr-2">
-            <button type="button" class="btn btn-secondary">
-              line weight
-            </button>
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <!-- line style -->
-          <div class="btn-group dropup pr-2">
-            <button type="button" class="btn btn-secondary">
-              line style
-            </button>
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <!-- line color -->
-          <div class="btn-group dropup pr-2">
-            <button type="button" class="btn btn-secondary">
-              line color
-            </button>
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <!-- fill color -->
-          <div class="btn-group dropup pr-2">
-            <button type="button" class="btn btn-secondary">
-              fill color
-            </button>
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-        </li>
+      <div class="input-group-prepend">
+        <button type="button" class="btn btn-sm btn-secondary mr-1">
+          <i class="fas fa-shapes"></i>
+          <span>snap on</span>
+          <span>pin</span>
+        </button>
+      </div>
 
-      </ul>
-      <!-- <form class="form-inline my-2 my-md-0">
-        <input class="form-control" type="text" placeholder="Search">
-      </form> -->
+      <input type="text" placeholder="Type a command" class="form-control mr-1">
+
+      <div class="input-group-prepend">
+        <button type="button" class="btn btn-sm btn-secondary mr-1">
+          <i class="fas fa-ambulance"></i>
+          <span>help</span>
+        </button>
+      </div>
+
     </div>
   </nav>
-
-
-
-
-
-
-
-
   <!-- Bootstrap core JavaScript -->
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
