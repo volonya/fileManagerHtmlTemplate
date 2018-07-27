@@ -178,7 +178,14 @@
       <div class="col-1  d-md-none d-lg-block" id="yellow" style="background-color: #343a40!important; overflow-y: scroll;">
 
         <div class="list-group mb-1">
-          <h6 class="text-warning">draw</h6>
+          <small class="text-warning">circuit</small>
+          <a href="#" class="list-group-item list-group-item-action p-1">
+            <i class="fas fa-pencil-ruler"></i>
+            <span>wire</span>
+          </a>
+        </div>
+        <div class="list-group mb-1">
+          <small class="text-warning">draw</small>
           <a href="#" class="list-group-item list-group-item-action p-1">line</a>
           <a href="#" class="list-group-item list-group-item-action active p-1">
             <i class="far fa-circle"></i>
@@ -190,7 +197,7 @@
           </a>
         </div>
         <div class="list-group mb-1">
-          <h6 class="text-warning">edit</h6>
+          <small class="text-warning">edit</small>
           <a href="#" class="list-group-item list-group-item-action p-1">
             <i class="fas fa-mouse-pointer"></i>
             <span>select</span>
@@ -208,34 +215,7 @@
           </a>
         </div>
 
-
-        <div class="list-group mb-1">
-          <h6 class="text-warning">edit</h6>
-          <a href="#" class="list-group-item list-group-item-action p-1">select</a>
-          <a href="#" class="list-group-item list-group-item-action p-1">copy</a>
-          <a href="#" class="list-group-item list-group-item-action p-1">move</a>
-        </div>
-        <div class="list-group mb-1">
-          <h6 class="text-warning">edit</h6>
-          <a href="#" class="list-group-item list-group-item-action p-1">select</a>
-          <a href="#" class="list-group-item list-group-item-action p-1">copy</a>
-          <a href="#" class="list-group-item list-group-item-action p-1">move</a>
-        </div>
-        <div class="list-group mb-1">
-          <h6 class="text-warning">edit</h6>
-          <a href="#" class="list-group-item list-group-item-action p-1">select</a>
-          <a href="#" class="list-group-item list-group-item-action p-1">copy</a>
-          <a href="#" class="list-group-item list-group-item-action p-1">move</a>
-        </div>
-        <div class="list-group mb-1">
-          <h6 class="text-warning">edit</h6>
-          <a href="#" class="list-group-item list-group-item-action p-1">select</a>
-          <a href="#" class="list-group-item list-group-item-action p-1">copy</a>
-          <a href="#" class="list-group-item list-group-item-action p-1">move</a>
-        </div>
-
       </div>
-
       <div class="col border" id="yellow" style="background-color: gray;">
         <canvas class="w-100 h-100"></canvas>
       </div>
@@ -298,36 +278,36 @@
 
         <div class="btn-group btn-group-toggle mr-1" data-toggle="buttons">
           <label class="btn btn-sm btn-primary active">
-            <input type="radio" name="options" autocomplete="off" checked>
+            <input type="radio" name="align-left" checked>
             <i class="fas fa-align-left"></i>
           </label>
           <label class="btn btn-sm btn-primary">
-            <input type="radio" name="options">
+            <input type="radio" name="align-center">
             <i class="fas fa-align-center"></i>
           </label>
           <label class="btn btn-sm btn-primary">
-            <input type="radio" name="options">
+            <input type="radio" name="align-right">
             <i class="fas fa-align-right"></i>
           </label>
           <label class="btn btn-sm btn-primary">
-            <input type="radio" name="options">
+            <input type="radio" name="align-justify">
             <i class="fas fa-align-justify"></i>
           </label>
         </div>
 
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-sm btn-primary active">
-            <input type="radio" name="options" autocomplete="off" checked>
+            <input type="radio" name="text-bold" checked>
             <i class="fas fa-bold"></i>
           </label>
           <label class="btn btn-sm btn-primary">
-            <input type="radio" name="options">
+            <input type="radio" name="text-italic">
             <i class="fas fa-italic"></i>
           </label>
         </div>
       </div>
 
-      <input type="text" placeholder="Type a command" class="form-control mr-1">
+      <input type="text" placeholder="Type a command" class="form-control mr-1 has-success">
 
       <div class="input-group-prepend">
         <button type="button" class="btn btn-sm btn-secondary mr-1">
